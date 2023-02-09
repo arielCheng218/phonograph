@@ -8,11 +8,11 @@
 </script>
 
 <div id="frontpage">
-	<h1>Can you tell the difference?</h1>
+	<h1>Is AI taking over composers jobs?</h1>
+	<p>For more information on this issue, visit the "About the issue" section above. To determine the answer yourself, see if you can tell the difference between human compositions and AI-generated compositions.</p>
 	<p>You will hear two pieces: one of which is human-composed lofi, and the other is <a href="https://github.com/zacharykatsnelson/Lofi-Hip-Hop-Generator"> AI-composed lofi</a>. Try and guess which is which.</p>
 	<p>Disclaimer: drum tracks for all pieces have been composed by humans.</p>
 	<button on:click={toggleButtonClickedTrue}>Start</button>
-	<canvas id="canvasElmId"></canvas>
 </div>
 
 <style>

@@ -6,31 +6,22 @@
 
 	// State variables
 	var started = false;
-	var dismissQuestionPage = false;
-	var displayReferences = false;
 
 </script>
 
 <div id="app">
 	<nav>
-		<a href="/" on:click|preventDefault={() => {started=false;dismissQuestionPage=false;displayReferences=false;}}>Home</a>
-		<a href="/" on:click|preventDefault={() => {started=true;dismissQuestionPage=false;displayReferences=false;}}>Guessing game</a>
-		<a href="/" on:click|preventDefault={() => {started=true;dismissQuestionPage=true;displayReferences=false;}}>About the issue</a>
-		<a href="/" on:click|preventDefault={() => {started=false;dismissQuestionPage=false;displayReferences=true;}}>References</a>
+		<a href="/" on:click|preventDefault={() => {started=false}}>Home</a>
+		<a href="/" on:click|preventDefault={() => {started=true}}>Guessing game</a>
+		<a href="https://docs.google.com/document/d/1UiIqPue2XlpBlGzB__PrJjKKlq8FE1Odgfdu73HWKNc/edit">About the issue</a>
+		<a href="https://www.kaggle.com/arielcheng218/generating-lofi-music-with-rnns/edit">Kaggle Notebook</a>
+		<a href="https://docs.google.com/document/d/1oe9B1c4kJe71XXYFfw5c5opxjY8xoq9YYKRviTq58ho/edit">References</a>
 	</nav>
-	{#if displayReferences}
-		<References />
-	{:else}
 		{#if !started}
 			<Frontpage bind:buttonClicked={started} />
 		{:else}
-			{#if dismissQuestionPage}
-				<ExplanationPage />
-			{:else}
-				<QuestionPage bind:dismissQuestionPage={dismissQuestionPage}/>
-			{/if}
+			<QuestionPage />
 		{/if}
-	{/if}
 </div>
 
 <style>

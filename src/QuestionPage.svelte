@@ -64,7 +64,6 @@
 	{:else}
 		<h1>You got {numCorrect}/3 right!</h1>
 		<button on:click={playAgain}>Play Again</button>
-		<button on:click={() => { dismissQuestionPage = true; }}>More information</button>
 	{/if}
 </div>
 
